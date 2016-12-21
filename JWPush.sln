@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWPush.Server", "JWPush.Server\JWPush.Server.csproj", "{D5A0A4A6-3531-488A-AEFD-3196391A6674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWPush", "JWPush.PushSharp\JWPush.csproj", "{CC88497A-42A2-431B-959E-EC09FDF9743F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWPush.Web", "JWPush.Web\JWPush.Web.csproj", "{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5A0A4A6-3531-488A-AEFD-3196391A6674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A0A4A6-3531-488A-AEFD-3196391A6674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A0A4A6-3531-488A-AEFD-3196391A6674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A0A4A6-3531-488A-AEFD-3196391A6674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC88497A-42A2-431B-959E-EC09FDF9743F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC88497A-42A2-431B-959E-EC09FDF9743F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC88497A-42A2-431B-959E-EC09FDF9743F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC88497A-42A2-431B-959E-EC09FDF9743F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
