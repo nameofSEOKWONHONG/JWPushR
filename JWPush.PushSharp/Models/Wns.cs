@@ -17,7 +17,7 @@ namespace JWPush.Models
     public sealed class Wns
     {
         public string ChannelUri { get; set; }
-        public XElement Payload { get; set; }
+        public string Payload { get; set; }
         public bool? RequestForStatus { get; set; }
         public object Tag { get; set; }
         public int? TimeToLive { get; set; }

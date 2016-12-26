@@ -120,17 +120,16 @@ namespace JWPush
                 bool moreToDo = true;
                 while (moreToDo)
                 {
-                    //get push data from database;
-                    //or push service call with create intance.
-                    Console.WriteLine($"Working Job : {w}, Thread Id : {Task.CurrentId}");
-                    Thread.Sleep(5000);
-
                     if (ct.IsCancellationRequested)
                     {
                         Console.WriteLine($"Work End : {w}, Thread Id : {Task.CurrentId}");
                         break;
                     }
-                    Thread.Sleep(1000);
+
+                    //get push data from database;
+                    //or push service call with create intance.
+                    Console.WriteLine($"Working Job : {w}, Thread Id : {Task.CurrentId}");
+                    Thread.Sleep(5000);
                 }
                 Thread.Sleep(1000);
             }, tokenSource.Token);

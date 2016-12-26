@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWPush", "JWPush.PushSharp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWPush.Web", "JWPush.Web\JWPush.Web.csproj", "{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWPush.Test", "JWPush.Test\JWPush.Test.csproj", "{E3C154C1-CC04-4E83-83CB-CDA965EDD0B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delay", "Delay", "{46A9BE87-B118-4719-8259-B91BEAE1C963}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,16 @@ Global
 		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C154C1-CC04-4E83-83CB-CDA965EDD0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C154C1-CC04-4E83-83CB-CDA965EDD0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C154C1-CC04-4E83-83CB-CDA965EDD0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C154C1-CC04-4E83-83CB-CDA965EDD0B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5A0A4A6-3531-488A-AEFD-3196391A6674} = {46A9BE87-B118-4719-8259-B91BEAE1C963}
+		{F114CF24-F6E6-4C00-A6FE-6643D3C52C9B} = {46A9BE87-B118-4719-8259-B91BEAE1C963}
 	EndGlobalSection
 EndGlobal

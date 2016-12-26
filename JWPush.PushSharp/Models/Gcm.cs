@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +17,11 @@ namespace JWPush.Models
     {
         public string CollapseKey { get; set; }        
         public bool? ContentAvailable { get; set; }        
-        public JObject Data { get; set; }        
+        public string Data { get; set; }        
         public bool? DelayWhileIdle { get; set; }        
         public bool? DryRun { get; set; }        
         public string MessageId { get; }        
-        public JObject Notification { get; set; }        
+        public string Notification { get; set; }        
         public string NotificationKey { get; set; }
         public int? Priority { get; set; } //Normal = 5, High = 10        
         public List<string> RegistrationIds { get; set; }        

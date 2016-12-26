@@ -33,6 +33,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +74,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,7 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApnsPush.cs" />
+    <Compile Include="Abstract\IJWPush.cs" />
+    <Compile Include="Concrete\ApnsPush.cs" />
+    <Compile Include="Concrete\GcmPush.cs" />
+    <Compile Include="Infrastructure\DIspose.cs" />
+    <Compile Include="Models\Push.cs" />
     <Compile Include="Models\PushWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Apns.cs" />
@@ -87,11 +96,15 @@
     <Compile Include="Models\Gcm.cs" />
     <Compile Include="Models\Wns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Concrete\WnsPush.cs" />
+    <Compile Include="PushHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DatabaseScript\Create JW.PushApps.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
