@@ -20,11 +20,15 @@ namespace JWPush
 
         public ApnsPush(ApnsCert apnsCert)
         {
+            if (_apnsCert == null) throw new Exception("Apns Certification is null.");
+
             _apnsCert = apnsCert;
         }
 
         public void Initialize()
         {
+            if (_apnsCert == null) throw new Exception("Apns Certification is null.");
+
             _config = new ApnsConfiguration(ApnsConfiguration.ApnsServerEnvironment.Sandbox, _apnsCert.Cert, _apnsCert.CertPass);
 
             if (_config != null)

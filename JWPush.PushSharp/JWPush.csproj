@@ -80,7 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApnsPush.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Models\PushWork.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Models\Apns.cs" />
     <Compile Include="Models\BasePushModel.cs" />
     <Compile Include="Models\Gcm.cs" />
