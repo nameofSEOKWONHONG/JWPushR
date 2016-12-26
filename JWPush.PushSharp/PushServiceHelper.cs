@@ -1,5 +1,4 @@
-﻿#define __RUN_STATE_INFO__
-using JWPush.Infrastructure;
+﻿using JWPush.Infrastructure;
 using JWPush.Models;
 using System;
 using System.Collections.Generic;
@@ -10,10 +9,31 @@ namespace JWPush
 {
     public class PushServiceHelper : Disposable
     {
-        private const int MIN_THREAD_COUNT = 50;
-        private const int MAX_THREAD_COUNT = 3;
+        private readonly int MIN_THREAD_COUNT = 50;
+        private readonly int MAX_THREAD_COUNT = 3;
+        private const int DIV_THREAD_COUNT = 6;
+
         private static List<PushWork> _threadList = new List<PushWork>();
         private static object _lock = new object();
+
+        public PushServiceHelper()
+        {
+            int minWorker, minIOC, maxWorker, maxIOC;
+            // Get the max, min thread count;
+            ThreadPool.GetMinThreads(out minWorker, out minIOC);
+            ThreadPool.GetMaxThreads(out maxWorker, out maxIOC);
+
+#if DEBUG
+            Console.WriteLine($"Thread work min : {minWorker}, min ioc : {minIOC}");
+            Console.WriteLine($"Thread work max : {maxWorker}, max ioc : {maxIOC}");
+
+            MIN_THREAD_COUNT = minWorker;
+            MAX_THREAD_COUNT = 3;
+#else
+            MIN_THREAD_COUNT = minWorker;
+            MAX_THREAD_COUNT = maxWorker / DIV_THREAD_COUNT;
+#endif
+        }
 
         public List<PushWork> GetWorkList()
         {
@@ -24,9 +44,9 @@ namespace JWPush
         {
             if (MAX_THREAD_COUNT < _threadList.Count)
             {
-                Console.WriteLine("Not create push work theread.");
-                Console.WriteLine("Push work thread is full.");
-                return this;
+                //Console.WriteLine("Not create push work theread.");
+                //Console.WriteLine("Push work thread is full.");
+                throw new Exception("Not create push work theread. Push work thread is full.");                
             }
 
             lock (_lock)
@@ -54,13 +74,22 @@ namespace JWPush
                         {
                             if (ct.IsCancellationRequested)
                             {
+#if DEBUG
                                 Console.WriteLine($"Work End : {item.WorkName}, Thread Id : {Task.CurrentId}");
+#else
+                                //write log
+#endif
                                 break;
                             }
-#if __RUN_STATE_INFO__
+#if DEBUG
                             //get push data from database;
+                            //use PushHelper
+
                             //or push service call with create intance.
+                            //use IJWPush
                             Console.WriteLine($"Working Job : {item.WorkName}, Thread Id : {Task.CurrentId}");
+#else
+                            //write log
 #endif
                             Thread.Sleep(5000);
                         }
@@ -87,7 +116,11 @@ namespace JWPush
                     {
                         if (_threadList[i].ThreadId == threadId)
                         {
+#if DEBUG
                             Console.WriteLine($"Find. Thread Id : {_threadList[i].ThreadId}, Work Name : {_threadList[i].WorkName}");
+#else
+                            //write log
+#endif
                             _threadList[i].TokenSource.Cancel();
                             _threadList[i].IsRun = false;
 
@@ -98,7 +131,11 @@ namespace JWPush
             }
             else
             {
+#if DEBUG
                 Console.WriteLine("Work list is empty.");
+#else
+                //write log
+#endif
             }
 
             return null;
