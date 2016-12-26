@@ -13,6 +13,7 @@ namespace JWPush.Models
         public string WorkName { get; set; }
         public int ThreadId { get; set; }
         public Task WorkTask { get; set; }
-        public CancellationTokenSource TokenSource { get; set; }        
+        public CancellationTokenSource TokenSource { get; set; }
+        public bool IsRun { get; set; } = false;
     }
 }
