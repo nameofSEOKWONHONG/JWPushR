@@ -88,7 +88,7 @@
     <Compile Include="Concrete\ApnsPush.cs" />
     <Compile Include="Concrete\GcmPush.cs" />
     <Compile Include="Infrastructure\DIspose.cs" />
-    <Compile Include="Models\Push.cs" />
+    <Compile Include="Models\PushApp.cs" />
     <Compile Include="Models\PushWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Apns.cs" />

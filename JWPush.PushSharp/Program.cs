@@ -16,22 +16,8 @@ namespace JWPush
 
         private static void Main(string[] args)
         {
-            int minWorker, minIOC, maxWorker, maxIOC;
-            // Get the max, min thread count;
-            ThreadPool.GetMinThreads(out minWorker, out minIOC);
-            ThreadPool.GetMaxThreads(out maxWorker, out maxIOC);
-
-            Console.WriteLine($"Thread work min : {minWorker}, min ioc : {minIOC}");
-            Console.WriteLine($"Thread work max : {maxWorker}, max ioc : {maxIOC}");
-
-            Console.WriteLine("Enter Continue.");
-            Console.ReadLine();
-
-            ThreadPool.SetMinThreads(minWorker, maxWorker / 2);
-
             PushServiceHelper psHelper = new PushServiceHelper();
 
-            //get work list from db.
             bool isEnded = false;
             while(!isEnded)
             {

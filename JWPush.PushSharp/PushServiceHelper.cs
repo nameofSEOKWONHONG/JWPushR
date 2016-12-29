@@ -81,12 +81,13 @@ namespace JWPush
 #endif
                                 break;
                             }
-#if DEBUG
+
                             //get push data from database;
                             //use PushHelper
 
                             //or push service call with create intance.
                             //use IJWPush
+#if DEBUG
                             Console.WriteLine($"Working Job : {item.WorkName}, Thread Id : {Task.CurrentId}");
 #else
                             //write log
